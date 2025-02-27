@@ -1,4 +1,4 @@
-﻿float num1, num2, resultado;
+float num1, num2, resultado;
 string operacao, usuario;
 
 Console.WriteLine("gostaria de iniciar a calculadora (s/n)");
