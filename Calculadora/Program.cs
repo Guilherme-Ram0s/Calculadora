@@ -1,30 +1,40 @@
-﻿// See https://aka.ms/new-console-template for more information
-int num1, num2;
-string operacao;
-int resultado;
+﻿float num1, num2, resultado;
+string operacao, usuario;
 
-Console.WriteLine("Digite o primeiro número:");
-num1 = int.Parse(Console.ReadLine());
-Console.WriteLine("Digite o segundo número:");
-num2 = int.Parse(Console.ReadLine());
+Console.WriteLine("gostaria de iniciar a calculadora (s/n)");
+    usuario = Console.ReadLine();
 
-Console.WriteLine("operação");
-operacao = Console.ReadLine();
-
-if (operacao == "*")
+while(usuario == "s" || usuario == "S")
 {
-    resultado = num1 * num2;
-    Console.WriteLine($"O resultado da multiplicação é: {resultado}");
-}
+    Console.WriteLine("Digite um numero");
+        num1 = float.Parse(Console.ReadLine());
+    Console.WriteLine("Digite o segundo numero");
+        num2 = float.Parse(Console.ReadLine());
 
-if (num2 == 0)
-{
-    Console.WriteLine("Não é possível dividir por zero");
-}
+    Console.WriteLine("Digite o número da operação \n 1 - ADIÇÃO \n 2 - SUBTRAÇÃO \n 3 - MULTIPLICAÇÃO \n 4 - DIVISÃO ");
+    operacao = Console.ReadLine();
 
-if (operacao == "/")
-{
-    resultado = num1 / num2;
-    Console.WriteLine($"O resultado da divisão é: {resultado}");
 
+    switch (operacao)
+    {
+        case "1":
+            resultado = num1 + num2;
+            Console.WriteLine($"O resultado é  {resultado}"); 
+            break;
+        case "2":
+            resultado = num1 - num2;
+            Console.WriteLine($"O resultado é  {resultado}");
+            break;
+        case "3":
+            resultado = num1 * num2;
+            Console.WriteLine($"O resultado é {resultado}");
+            break;
+        case "4":
+            resultado = num1 / num2;
+            Console.WriteLine($"O resultado da sua divisão é {resultado}");
+            break;
+        
+    }
+    Console.WriteLine("gostaria de continuar testando a calculadora? s/n");
+        operacao = Console.ReadLine();
 }
